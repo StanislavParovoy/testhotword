@@ -18,7 +18,7 @@ def listenmic():
     pa = None
     audio_stream = None
     try:
-        porcupine = Porcupine(library_path='lib/libpv_porcupine.dll', model_file_path='lib/porcupine_params.pv', keyword_file_paths=['keywords/roxy_windows.ppn'], sensitivities=[0.5])
+        porcupine = Porcupine(library_path='lib/libpv_porcupine.dll', model_file_path='lib/porcupine_params.pv', keyword_file_paths=['keywords/americano_windows.ppn'], sensitivities=[0.5])
         pa = pyaudio.PyAudio()
         audio_stream = pa.open(rate=porcupine.sample_rate, channels=1, format=pyaudio.paInt16, input=True, frames_per_buffer=porcupine.frame_length, input_device_index=None)
         while True:
